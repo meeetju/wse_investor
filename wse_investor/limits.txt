@@ -1,0 +1,14 @@
+# P/E max value, set 0 to disable
+p_e_max_limit = 15
+# ROE min value, set 0 to disable
+roe_min_limit = 15
+# Dividend years in at least once dividend was paid
+dividend_years = 2021, 2020
+# P/BV max value, set 0 to disable
+p_bv_max_limit = 0.0
+# P/BV Graham's max value, set 0 to disable
+p_bv_g_max_limit = 0.0
+# Allowed Altman Ratings
+ratings = AAA, AA+, AA, AA-, A+, A, A-, BBB+, BBB, BBB-, BB+, BB
+# Piotroski F Score min value, set 0 to disable
+f_score = 7.0
