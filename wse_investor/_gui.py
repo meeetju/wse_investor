@@ -1,5 +1,5 @@
 import logging
-from _best_companies import get
+from wse_investor._best_companies import get
 from tkinter import *
 from threading import *
 
