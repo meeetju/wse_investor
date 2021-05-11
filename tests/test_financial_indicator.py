@@ -4,18 +4,19 @@ import requests
 
 from wse_investor._rank import RankedCompanies
 from wse_investor._financial_indicator import FinancialIndicators
-from wse_investor._limits_reader import LimitsTxtFileReader
+from wse_investor._limits_reader import LimitsYamlReader
 from wse_investor._requirement import Requirement
-from tests.data_for_tests import ratings_response_text, limits_file_text, indicators_text
+from tests.data_for_tests import ratings_response_text, limits_yaml, indicators_text
 
 
 class TestFinancialIndicator:
 
     @pytest.fixture
     def limits_reader(self):
-        with patch("builtins.open", new_callable=mock_open, read_data=limits_file_text):
-            self.requirement = Requirement(LimitsTxtFileReader('dummy path'))
-            yield
+        with patch("builtins.open", new_callable=mock_open):
+            with patch('wse_investor._limits_reader.yaml.load', return_value=limits_yaml):
+                self.requirement = Requirement(LimitsYamlReader('dummy path'))
+                yield
 
     @pytest.fixture
     def ratings_response(self):

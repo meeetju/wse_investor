@@ -1,0 +1,8 @@
+limits:
+  p_e_max_limit: 15
+  roe_min_limit: 15
+  dividend_years: ['2021', '2020']
+  p_bv_max_limit: 0.0
+  p_bv_g_max_limit: 0.0
+  ratings: [AAA, AA+, AA, AA-, A+, A, A-, BBB+, BBB, BBB-, BB+, BB]
+  f_score: 7.0

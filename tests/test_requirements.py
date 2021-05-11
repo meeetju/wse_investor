@@ -1,18 +1,19 @@
 from mock import patch, mock_open
 import pytest
 
-from wse_investor._limits_reader import LimitsTxtFileReader
+from wse_investor._limits_reader import LimitsYamlReader
 from wse_investor._requirement import Requirement
-from tests.data_for_tests import limits_file_text
+from tests.data_for_tests import limits_yaml
 
 
 class TestRequirements:
 
     @pytest.fixture
     def limits_reader(self):
-        with patch("builtins.open", new_callable=mock_open, read_data=limits_file_text):
-            self.requirement = Requirement(LimitsTxtFileReader('dummy path'))
-            yield
+        with patch("builtins.open", new_callable=mock_open):
+            with patch('wse_investor._limits_reader.yaml.load', return_value=limits_yaml):
+                self.requirement = Requirement(LimitsYamlReader('dummy path'))
+                yield
 
     def test_p_e_requirement(self, limits_reader):
 

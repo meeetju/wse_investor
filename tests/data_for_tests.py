@@ -39,20 +39,13 @@ ratings_response_text = """
 		</tr>
 		"""
 
-limits_file_text = """# P/E max value, set 0 to disable
-p_e_max_limit = 10
-# ROE min value, set 0 to disable
-roe_min_limit = 5
-# Dividend years in at least once dividend was paid
-dividend_years = 2021, 2020, 2019
-# P/BV max value, set 0 to disable
-p_bv_max_limit = 5.0
-# P/BV Graham's max value, set 0 to disable
-p_bv_g_max_limit = 10.0
-# Allowed Altman Ratings
-ratings = AAA, AA+, AA, AA-, A+, A, A-, BBB+, BBB, BBB-, BB+, BB
-# Piotroski F Score min value, set 0 to disable
-f_score = 5.0"""
+limits_yaml = {'limits': {'p_e_max_limit': 10,
+                          'roe_min_limit': 5,
+                          'dividend_years': ['2021', '2020', '2019'],
+                          'p_bv_max_limit': 5.0,
+                          'p_bv_g_max_limit': 10.0,
+                          'ratings': ['AAA', 'AA+', 'AA', 'AA-', 'A+', 'A', 'A-', 'BBB+', 'BBB', 'BBB-', 'BB+', 'BB'],
+                          'f_score': 7.0}}
 
 indicators_text = """
 <!DOCTYPE html>
