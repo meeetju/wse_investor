@@ -22,7 +22,8 @@ class StdoutDirector:
 
 class Gui:
 
-    def __init__(self):
+    def __init__(self, get_companies_method):
+        self._get_companies_method = get_companies_method
         self._root = Tk()
         self._frame = Frame(self._root)
         self._main_menu = Menu(self._frame)
@@ -60,10 +61,5 @@ class Gui:
     def _exit(self):
         self._root.destroy()
 
-    @staticmethod
-    def _get_companies_process():
-        get()
-
-
-gui = Gui()
-gui.run()
+    def _get_companies_process(self):
+        self._get_companies_method()

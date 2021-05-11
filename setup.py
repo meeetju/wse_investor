@@ -21,5 +21,5 @@ setup(
     version="0.1",
     description="WSE Investor.",
     options={"build_exe": build_exe_options},
-    executables=[Executable("wse_investor\\_gui.py", base=base)]
+    executables=[Executable("wse_investor\\wse_investor_app.py", base=base)]
 )
