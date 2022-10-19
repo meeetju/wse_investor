@@ -1,8 +1,7 @@
 import logging
-from wse_investor._best_companies import get
+import sys
 from tkinter import *
 from threading import *
-
 
 logger = logging.getLogger()
 
